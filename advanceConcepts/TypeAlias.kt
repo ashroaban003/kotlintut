@@ -1,4 +1,6 @@
-fun process(handler: (Int, String, Boolean) -> Unit) {
+typealias Callback = (Int, String, Boolean) -> Unit
+
+fun process(handler: Callback) {
     println("Starting the process...")
     val code = 200
     val message = "Success"
