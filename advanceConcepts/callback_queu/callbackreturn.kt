@@ -6,14 +6,27 @@ fun processData(data: List<Int>, mul: (Int)->Int): List<Int> {
     }
     return results;
 }
+fun multicall(mana : (Int) -> Unit, shreya : ()-> Unit){
+    mana(30)
+    shreya()
+}
 
 fun main(){
     val stringList = listOf(3,2,4)
-    val ans = processData(stringList){number -> 
+    //lamda callback function 
+    val lamda = processData(stringList){number -> 
            val mul = 6
            number*mul //last element is returned
        
     }
-    println(ans)
+    println(lamda)
+    val mulcall = multicall(
+        mana = {num ->
+            println("happy birthday at nov ${num}")
+        },
+        shreya = {
+            println("always in my heart")
+        }
+    )
    
 }
