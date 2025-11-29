@@ -10,7 +10,8 @@ fun processData(data: List<Int>, mul: (Int)->Int): List<Int> {
 fun main(){
     val stringList = listOf(3,2,4)
     val ans = processData(stringList){number -> 
-            number*2
+           val mul = 6
+           number*mul //last element is returned
        
     }
     println(ans)
