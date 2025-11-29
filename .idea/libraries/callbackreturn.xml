@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="callbackreturn">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/advanceConcepts/callback_queu/callbackreturn.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

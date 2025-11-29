@@ -6,9 +6,9 @@ Interface callcenter{
 
 fun executeTask(listener: callcenter){
     println("task started")
-    listener.onProcess()
-    listener.onSuccess()
-    listener.OnFailure()  
+    listener.onProcess(0)
+    listener.onSuccess("hey")
+    listener.OnFailure("not failed")
 }
 
 fun main(){
