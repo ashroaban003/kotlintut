@@ -1,19 +1,19 @@
-Interface callcenter{
+interface callcenter{
     fun onProcess(process : Int)
     fun onSuccess(result : String)
-    fun OnFailure(error : String)
+    fun onFailure(error : String)
 }
 
 fun executeTask(listener: callcenter){
     println("task started")
     listener.onProcess(0)
     listener.onSuccess("hey")
-    listener.OnFailure("not failed")
+    listener.onFailure("not failed")
 }
 
 fun main(){
-    executeTask(object : callcenter{
-        override fun onProcess(progress: Int) {
+    executeTask(object : callcenter {
+        override fun onProcess(process: Int) {
             println("▶️ Progress: $progress%")
         }
 
