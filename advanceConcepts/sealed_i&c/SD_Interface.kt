@@ -17,7 +17,32 @@ fun render(state : life){
     //bcs we know that there wont be any other type that can inherit it in some other file
 }
 
+//real life example of where it is used in backend for api
+sealed interface ApiResponse
+
+data class Ok(val body: String) : ApiResponse
+data class NotFound(val url: String) : ApiResponse
+object Unauthorized : ApiResponse
+
+fun handleResponse(res: ApiResponse) {
+    when (res) {
+        is Ok -> println("Success: ${res.body}")
+        is NotFound -> println("404 Not Found: ${res.url}")
+        Unauthorized -> println("401 Unauthorized")
+    }
+}
+
+
 fun main(){
     val state1 : life = Daisy(6)
     render(state1)
+
+    //real world example
+    val r1: ApiResponse = Ok("User list")
+    val r2: ApiResponse = NotFound("/api/users/5")
+    val r3: ApiResponse = Unauthorized
+
+    handleResponse(r1)
+    handleResponse(r2)
+    handleResponse(r3)
 }
